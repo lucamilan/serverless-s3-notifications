@@ -1,4 +1,4 @@
-serverless-spikes
+#serverless-spikes
 
 Notifiy new S3 upload to lambda function.
 
