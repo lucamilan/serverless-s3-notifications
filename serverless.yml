@@ -4,12 +4,13 @@ provider:
   name: aws
   region: eu-west-1
   runtime: nodejs4.3
+  stage: dev
   iamRoleStatements:
     $ref: ./iamRoleStatements.json
 
 functions:
   hello:
-    description: Detect upload to S3
+    description: Detect an upload to S3
     memorySize: 1024
     timeout: 30
     handler: handler.dispatch
@@ -17,3 +18,16 @@ functions:
       - s3:
           bucket: s3-notification
           event: s3:ObjectCreated:*
+
+resources:
+  Resources:
+    S3BucketS3notification:
+      Properties:
+        CorsConfiguration:
+          CorsRules:
+            - AllowedMethods:
+                - PUT
+              AllowedOrigins:
+                - "*"
+              AllowedHeaders:
+                - "*"
