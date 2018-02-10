@@ -1,6 +1,6 @@
-#serverless-spikes
+# serverless-spikes
 
-Notifiy new S3 upload to lambda function.
+Notify an S3 upload to a lambda function.
 
 1 - Clone the repo
 
